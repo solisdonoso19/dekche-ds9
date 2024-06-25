@@ -1,0 +1,28 @@
+.c-input {
+  font-size: 16px;
+  line-height: 24px;
+  color: #1c170d;
+  label {
+    font-weight: 500;
+  }
+  input {
+    margin-top: 8px;
+    height: 56px;
+    background-color: #f5f0e5;
+    padding: 16px;
+    border: none;
+    font-weight: 400;
+    &::placeholder {
+      color: #a1824a;
+    }
+    &::-webkit-input-placeholder {
+      color: #a1824a;
+    }
+    &:-ms-input-placeholder {
+      color: #a1824a;
+    }
+    &::-ms-input-placeholder {
+      color: #a1824a;
+    }
+  }
+}
