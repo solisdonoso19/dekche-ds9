@@ -1,6 +1,10 @@
-<div class="c-input d-flex flex-column">
+<div [formGroup]="form" class="c-input d-flex flex-column">
     @if (label) {
-    <label for="">{{label}}</label>
+    <label [for]="name">{{label}}</label>
     }
-    <input class="rounded" [name]="name" [type]="type" [placeholder]="placeholder">
+    @if (form.get(name)?.invalid && form.get(name)?.touched){
+    <span class="error-message">* Error in field</span>
+    }
+    <input [style]="height ?? ''" (keyup)="handleKeyup($event)" class="rounded" [id]="name" [formControlName]="name"
+        [type]="type" [placeholder]="placeholder ?? ''" [disabled]="isDisabled">
 </div>

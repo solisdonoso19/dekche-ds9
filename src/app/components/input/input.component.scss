@@ -5,8 +5,15 @@
   label {
     font-weight: 500;
   }
+  span {
+    color: #6d0000;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 20px;
+    font-style: italic;
+    margin-bottom: 8px;
+  }
   input {
-    margin-top: 8px;
     height: 56px;
     background-color: #f5f0e5;
     padding: 16px;
@@ -23,6 +30,10 @@
     }
     &::-ms-input-placeholder {
       color: #a1824a;
+    }
+    &:focus-visible {
+      outline: 2px solid #a1824a;
+      border: 3px solid #ffffff;
     }
   }
 }
