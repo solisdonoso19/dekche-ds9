@@ -1,0 +1,36 @@
+.profile {
+  .container {
+    .profile-img {
+      padding: 48px 0;
+      gap: 16px;
+      text-align: center;
+      img {
+        object-fit: cover;
+        width: 128px;
+        height: 128px;
+      }
+      h3 {
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 30px;
+      }
+      h5 {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        color: #a1824a;
+      }
+    }
+    .info {
+      .head {
+        color: #a1824a;
+      }
+      .value,
+      .head {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 22px;
+      }
+    }
+  }
+}

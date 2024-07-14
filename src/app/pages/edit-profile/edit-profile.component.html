@@ -1,0 +1,75 @@
+<section class="profile">
+    <app-navbar />
+    <section class="container">
+        <div class="profile-img d-flex align-items-center flex-column">
+            <img class="rounded-circle" src="https://aws-modapedia.vogue.es/prod/designs/v1/assets/640x427/1373.jpg"
+                alt="">
+            <div>
+                <h3>Margot Robbie</h3>
+                <h5>Chitre, Herrera</h5>
+            </div>
+        </div>
+        <hr>
+        <div class="form">
+            <form [formGroup]="profile" (ngSubmit)="onSubmit()">
+                <h4 style="margin-bottom: 32px">Personal Information</h4>
+                <div class="personal-info d-flex flex-column">
+                    <div>
+                        <app-input [form]="profile" name="names" label="Name" placeholder="Enter your name"></app-input>
+                    </div>
+                    <div>
+                        <app-input [form]="profile" name="lastnames" label="Last Name"
+                            placeholder="Enter your last name"></app-input>
+                    </div>
+                    <div>
+                        <app-input [form]="profile" name="email" label="Email Address" type="email"
+                            placeholder="Enter your email address"></app-input>
+                    </div>
+                    <div>
+                        <app-input [form]="profile" name="bio" label="Bio" placeholder="Enter your bio"></app-input>
+                    </div>
+                    <div>
+                        <app-input [form]="profile" name="province" label="Province"
+                            placeholder="Enter your province"></app-input>
+                    </div>
+                    <div>
+                        <app-input [form]="profile" name="phoneNumber" label="Phone Number"
+                            placeholder="Enter your phone number (0000-0000)"></app-input>
+                    </div>
+                </div>
+                <h4 style="margin: 32px 0">Account Information</h4>
+                <div class="account-info d-flex flex-column">
+                    <div>
+                        <app-input [form]="profile" name="username" label="Username"
+                            placeholder="Enter your username"></app-input>
+                    </div>
+                    <div>
+                        <app-input [form]="profile" name="image" label="Profile Image"
+                            placeholder="Enter your profile image" type="file"></app-input>
+                    </div>
+                    <div class="d-flex gap-4 justify-content-between align-items-center">
+                        <div class="w-75">
+                            <app-input [form]="profile" name="password"
+                                [label]="editPass ? 'Change Password' : 'Old Password'"
+                                placeholder="Enter your new password name"></app-input>
+                        </div>
+                        <div class="w-25">
+                            <app-button [label]="editPass ? 'Change Password' : 'Cancel'"
+                                (onClick)="changePass()"></app-button>
+                        </div>
+                    </div>
+                    @if(!editPass){
+                    <app-input [form]="profile" name="newPassword" label="Enter new password"
+                        placeholder="Enter your new password name"></app-input>
+                    <app-input [form]="profile" name="rePassword" label="Enter the new password again"
+                        placeholder="Enter your new password name"></app-input>
+                    }
+                </div>
+                <div style="margin-top: 32px;">
+                    <app-button label="Edit Profile" (onClick)="onSubmit()" />
+                </div>
+            </form>
+        </div>
+    </section>
+    <app-footer />
+</section>

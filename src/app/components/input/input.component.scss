@@ -9,9 +9,9 @@
     color: #6d0000;
     font-weight: 600;
     font-size: 12px;
-    line-height: 20px;
+    line-height: 26px;
     font-style: italic;
-    margin-bottom: 8px;
+    align-items: baseline;
   }
   input {
     height: 56px;
@@ -35,5 +35,8 @@
       outline: 2px solid #a1824a;
       border: 3px solid #ffffff;
     }
+  }
+  input:disabled {
+    background-color: #dedad2;
   }
 }

@@ -10,7 +10,6 @@ import { ReactiveFormsModule, FormGroup } from '@angular/forms';
 })
 export class InputComponent {
   @Input() name: string = '';
-  @Input() isDisabled: boolean = false;
   @Input() type?: string = 'text';
   @Input() placeholder?: string;
   @Input() form: FormGroup = new FormGroup({});
@@ -23,8 +22,6 @@ export class InputComponent {
   handleKeyup(event: KeyboardEvent) {
     const input = event.target as HTMLInputElement;
     console.log(`${this.name.toUpperCase()}:`, input.value);
-    if (!this.isDisabled) {
-      this.inputChange.emit(input.value);
-    }
+    this.inputChange.emit(input.value);
   }
 }

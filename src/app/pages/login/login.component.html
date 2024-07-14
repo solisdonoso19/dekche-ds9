@@ -18,10 +18,13 @@
                 <app-input [form]="login" name="password" label="Password" type="password"
                     placeholder="Enter your password"></app-input>
             </div>
+            @if (badCredential) {
+            <app-alert text="Credenciales incorrectas: Porfavor verifique sus datos." />
+            }
             <div>
-                <app-button label="Log In" (onClick)="onSubmit()"></app-button>
+                <app-button label="Log In" (onClick)="onSubmit()" />
             </div>
         </form>
-        <a href="#">Don't have an account? <span>Sign up</span></a>
+        <a href="/register">Don't have an account? <span>Sign up</span></a>
     </div>
 </section>

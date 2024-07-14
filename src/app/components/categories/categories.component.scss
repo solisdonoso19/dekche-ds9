@@ -1,0 +1,40 @@
+.categories {
+  .scroll {
+    overflow: auto; /* Habilita el scroll */
+    scrollbar-width: none; /* Oculta la barra de scroll en Firefox */
+    -ms-overflow-style: none; /* Oculta la barra de scroll en IE y Edge */
+    &::-webkit-scrollbar {
+      display: none; /* Oculta la barra de scroll en WebKit */
+    }
+    .category {
+      cursor: pointer;
+      position: relative;
+      img {
+        object-fit: cover;
+        object-position: 50% 50%;
+        width: 223px;
+        height: 223px;
+      }
+      .gradient {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding: 50px 10px 10px 10px;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+        color: white;
+      }
+    }
+  }
+  .btn-carousel {
+    margin-top: 16px;
+    float: right;
+    display: flex;
+    gap: 8px;
+    button {
+      width: 25px;
+      height: 25px;
+      border: none;
+      background-color: #f5f0e5;
+    }
+  }
+}

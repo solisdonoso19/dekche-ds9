@@ -1,22 +1,36 @@
 <nav class="d-flex justify-content-between">
-    <div class="logo d-flex align-items-center">
+    <div (click)="goToHome()" class="logo d-flex align-items-center">
         <i class="bi bi-flower1"></i>
         <span class="ps-1">dekche</span>
     </div>
     <div class="menu d-flex align-items-center">
         <div class="search">
             <form>
-                <app-input placeholder="Search" height="height: 40px" name="search"></app-input>
+                <app-input [form]="search" placeholder="Search" height="height: 40px" name="search"></app-input>
             </form>
         </div>
         <div class="icons d-flex">
+            <div class="icon rounded">Sell</div>
             <div class="icon rounded"><i class="bi bi-balloon-heart"></i></div>
             <div class="icon rounded"><i class="bi bi-basket"></i></div>
         </div>
         <div class="profile">
-            <img class="rounded-circle"
-                src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1961&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="profile">
+            <div class="dropdown">
+                <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img class="rounded-circle"
+                        src="https://aws-modapedia.vogue.es/prod/designs/v1/assets/640x427/1373.jpg" alt="profile">
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/profile">Profile</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li (click)="logout()"><a class="dropdown-item d-flex justify-content-between align-items-center"
+                            href="/login"><span>Log
+                                Out</span> <i style="font-size: 20px;color:brown"
+                                class="bi bi-box-arrow-in-right"></i></a></li>
+                </ul>
+            </div>
         </div>
     </div>
 </nav>

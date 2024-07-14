@@ -1,0 +1,25 @@
+<section class="categories position-relative">
+    <h3>{{categoryTitle}}</h3>
+    <div #scrollContainer class="d-flex gap-4 w-100 overflow-auto scroll">
+        @for (type of category.types; track $index) {
+        <div class="category">
+            <img class="rounded"
+                src="https://images.unsplash.com/photo-1541043081679-e877f6b15b51?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="...">
+            <div class="gradient rounded-bottom">
+                {{type.type}}
+            </div>
+        </div>
+        }
+    </div>
+    <div class="btn-carousel">
+        <button (click)="scrollLeft()" class="rounded" type="button">
+            <span aria-hidden="true"><i class="bi bi-chevron-left"></i></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button (click)="scrollRight()" class="rounded" type="button">
+            <span aria-hidden="true"><i class="bi bi-chevron-right"></i></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</section>

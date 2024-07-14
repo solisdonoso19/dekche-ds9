@@ -7,17 +7,26 @@ import {
   Validators,
   ReactiveFormsModule,
 } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AlertComponent } from '../../components/alert/alert.component';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [InputComponent, ButtonComponent, ReactiveFormsModule],
+  imports: [
+    InputComponent,
+    ButtonComponent,
+    ReactiveFormsModule,
+    AlertComponent,
+  ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })
 export class LoginComponent {
   public login: FormGroup;
-  constructor() {
+  public badCredential: boolean = false;
+  constructor(private service: AuthService, private router: Router) {
     this.login = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [
@@ -27,10 +36,23 @@ export class LoginComponent {
     });
   }
 
+  sendLogin() {
+    this.service
+      .login(this.login.value)
+      .then((res) => {
+        if (res) {
+          this.router.navigate(['/']);
+        }
+      })
+      .catch((err) => {
+        this.badCredential = true;
+      });
+  }
+
   onSubmit() {
     console.warn(this.login.value);
     if (this.login.valid) {
-      console.log(this.login.value);
+      this.sendLogin();
     }
   }
 }

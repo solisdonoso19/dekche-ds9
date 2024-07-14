@@ -3,6 +3,7 @@ nav {
   padding: 12.5px 40px;
   border-bottom: 1px solid #e5e8eb;
   .logo {
+    cursor: pointer;
     color: #1c170d;
     i {
       font-size: 25px;
@@ -24,7 +25,6 @@ nav {
     .icons {
       gap: 8px;
       .icon {
-        width: 40px;
         height: 40px;
         padding: 10px;
         background-color: #f5f0e5;
@@ -37,11 +37,18 @@ nav {
       }
     }
     .profile {
-      img {
-        height: 40px;
-        width: 40px;
-        object-fit: cover;
-        cursor: pointer;
+      .dropdown {
+        button {
+          border: none;
+          width: max-content;
+          background-color: transparent;
+          img {
+            height: 40px;
+            width: 40px;
+            object-fit: cover;
+            cursor: pointer;
+          }
+        }
       }
     }
   }

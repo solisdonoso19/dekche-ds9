@@ -1,1 +1,43 @@
-<app-navbar></app-navbar>
+<div class="home">
+    <app-navbar></app-navbar>
+    <section class="container d-flex flex-column">
+        <div class="banner rounded p-3 d-flex align-items-center">
+            <div class="rounded cta p-3">
+                <i class="bi bi-box2-heart-fill"></i>
+                <h3>Earn extra <span>money</span> while helping the <span>environment</span></h3>
+                <div class="btn-cta">
+                    <app-button label="Sell Now" />
+                </div>
+            </div>
+        </div>
+        <div class="categories d-flex flex-column">
+            <app-categories categoryTitle="Women's Clothing" idCarousel="women" [category]="damas"></app-categories>
+            <div class="info-cards d-flex w-100">
+                <div class="rounded info-card info-card-1 p-3">
+                    <div class="rounded p-3">
+                        Save the <span>environment</span> with <span>dekche</span>
+                        <div class="w-50 mt-2">
+                            <app-button label="Go to Shop"></app-button>
+                        </div>
+                    </div>
+                </div>
+                <div class="rounded info-card info-card-2 p-3">
+                    <div class="rounded p-3">
+                        <i class="bi bi-recycle"></i>
+                        Affordable <span>sustainable</span> fashion
+                    </div>
+                </div>
+            </div>
+            <app-categories categoryTitle="Men's Clothing" idCarousel="men" [category]="caballeros"></app-categories>
+            <div class="linkbar rounded d-flex justify-content-between align-items-center w-100">
+                <div class="d-flex align-items-center">
+                    <i class="bi bi-record-fill"></i><span class="ps-2">Frequently Asked Questions
+                    </span>
+                </div>
+                <div><i class="bi bi-arrow-right"></i></div>
+            </div>
+            <app-categories categoryTitle="Kids' Clothing" idCarousel="kid" [category]="ninos"></app-categories>
+        </div>
+    </section>
+    <app-footer></app-footer>
+</div>
