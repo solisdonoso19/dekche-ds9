@@ -4,6 +4,7 @@ import { ButtonComponent } from '../../components/button/button.component';
 import { FooterComponent } from '../../components/footer/footer.component';
 import { CategoriesComponent } from '../../components/categories/categories.component';
 import { CategoriesService } from '../../services/categories.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -24,7 +25,10 @@ export class HomeComponent {
   public ninos: any[] = [];
   public accesorios: any[] = [];
 
-  constructor(private categoriesService: CategoriesService) {}
+  constructor(
+    private categoriesService: CategoriesService,
+    private router: Router
+  ) {}
   ngOnInit() {
     this.categoriesService
       .getCategoriesTypes()
@@ -56,5 +60,13 @@ export class HomeComponent {
       .catch((err) => {
         console.error(err);
       });
+  }
+
+  goToShop() {
+    this.router.navigate(['/shop']);
+  }
+
+  goToSell() {
+    this.router.navigate(['/sell']);
   }
 }

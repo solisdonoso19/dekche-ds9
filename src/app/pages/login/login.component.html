@@ -19,7 +19,7 @@
                     placeholder="Enter your password"></app-input>
             </div>
             @if (badCredential) {
-            <app-alert text="Credenciales incorrectas: Porfavor verifique sus datos." />
+            <app-alert text="Incorrect credentials: Please verify your details." />
             }
             <div>
                 <app-button label="Log In" (onClick)="onSubmit()" />

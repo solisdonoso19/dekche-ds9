@@ -1,0 +1,119 @@
+.article {
+  .side-bar {
+    .breadcrumb {
+      .category {
+        color: #a1824a;
+      }
+      span {
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 500;
+        color: #1c170d;
+      }
+    }
+    .info {
+      h3 {
+        font-weight: 500;
+      }
+      h5 {
+        color: #a1824a;
+      }
+      .details {
+        color: #a1824a;
+        font-size: 18px;
+        line-height: 26px;
+        font-weight: 500;
+      }
+      p {
+        color: #1c170d;
+        font-size: 14px;
+        line-height: 22px;
+      }
+    }
+  }
+  .container {
+    padding: 32px;
+    .images {
+      div {
+        img {
+          width: 250px;
+          height: 250px;
+        }
+      }
+    }
+    .more-info {
+      margin: 24px 0 24px 20px;
+      font-size: 14px;
+    }
+    .information {
+      margin-top: 32px;
+      .user-info {
+        color: #a1824a;
+        div {
+          span {
+            font-size: 14px;
+          }
+        }
+      }
+      .recent {
+        margin-top: 24px;
+        h3 {
+          margin-bottom: 24px;
+        }
+        .articles {
+          .article {
+            cursor: pointer;
+            transition: all 0.2s ease-in;
+            .img {
+              img {
+                height: 250px;
+                object-fit: cover;
+              }
+            }
+            .info {
+              margin-top: 16px;
+              h2 {
+                font-size: 22px;
+                color: #a1824a;
+              }
+              .description {
+                white-space: nowrap;
+                max-width: 100%;
+                overflow: hidden;
+                font-size: 16px;
+                line-height: 22px;
+                font-weight: 400;
+                text-overflow: ellipsis;
+              }
+              .information {
+                padding: 16px 0;
+                .price {
+                  color: #a1824a;
+                  font-size: 22px;
+                  text-align: right;
+                }
+              }
+            }
+            &:hover {
+              box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            }
+          }
+        }
+      }
+      div {
+        .icon {
+          width: 45px;
+          height: 45px;
+          background-color: #f5f0e5;
+          i {
+            font-size: 25px;
+            color: #a1824a;
+          }
+        }
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

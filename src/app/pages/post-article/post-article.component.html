@@ -1,5 +1,71 @@
 <section class="sell">
     <app-navbar />
-    <section class="container"></section>
+    <section class="container">
+        <div class="form">
+            <form [formGroup]="post" (ngSubmit)="onSubmit()">
+                <h4 style="margin-bottom: 32px">Article Information</h4>
+                <div class="personal-info d-flex flex-column gap-3">
+                    <div>
+                        <app-input [form]="post" name="title" label="Title"
+                            placeholder="Enter the title of the article"></app-input>
+                    </div>
+                    <div>
+                        <app-input [form]="post" name="description" label="Decription"
+                            placeholder="Enter de description of the article"
+                            placeholder="Enter your last name"></app-input>
+                    </div>
+                    <div>
+                        <app-input [form]="post" name="price" label="Price" type="number"
+                            placeholder="Enter the article price"></app-input>
+                    </div>
+                    <div>
+                        <app-input [form]="post" name="size" label="Size"
+                            placeholder="Enter the article size"></app-input>
+                    </div>
+                    <div>
+                        <app-input [form]="post" name="stock" label="Stock"
+                            placeholder="Enter the quantity of article available"></app-input>
+                    </div>
+                    <div>
+                        <label for="categoryId">Category</label>
+                        <select (change)="categoryChange($event)" class="rounded w-100" id="categoryId"
+                            formControlName="categoryId">
+                            <option value="0" selected>Select a category</option>
+                            @for (c of categories; track $index) {
+                            <option [value]="c.id">{{c.category}}</option>
+                            }
+                        </select>
+                    </div>
+                    <div>
+                        <label for="typeId">Category</label>
+                        <select class="rounded w-100" id="typeId" formControlName="typeId">
+                            <option value="0" selected>Select a category</option>
+                            @for (t of types; track $index) {
+                            <option [value]="t.id">{{t.type}}</option>
+                            }
+                        </select>
+                    </div>
+                    <div>
+                        <app-input [form]="post" name="image" label="Article Image 1"
+                            placeholder="Enter your Article Image 1" type="file"></app-input>
+                    </div>
+                    <div>
+                        <app-input [form]="post" name="image2" label="Article Image 2"
+                            placeholder="Enter your Article Image 2" type="file"></app-input>
+                    </div>
+                    <div>
+                        <app-input [form]="post" name="image3" label="Article Image 3"
+                            placeholder="Enter your Article Image 3" type="file"></app-input>
+                    </div>
+                    @if (badRequest) {
+                    <app-alert text="An error has occurred, please review the fields and try again"></app-alert>
+                    }
+                </div>
+                <div style="margin-top: 32px;">
+                    <app-button label="Post Article" (onClick)="onSubmit()" />
+                </div>
+            </form>
+        </div>
+    </section>
     <app-footer />
 </section>

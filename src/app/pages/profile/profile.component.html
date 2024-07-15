@@ -5,11 +5,11 @@
             <img class="rounded-circle" src="https://aws-modapedia.vogue.es/prod/designs/v1/assets/640x427/1373.jpg"
                 alt="">
             <div>
-                <h3>Margot Robbie</h3>
-                <h5>Chitre, Herrera</h5>
+                <h3>{{user.names + ' ' + user.lastnames}}</h3>
+                <h5>{{user.province + ', Panamá'}}</h5>
             </div>
             <div style="width: 112.5px;">
-                <app-button label="Edit Profile" />
+                <app-button (onClick)="editProfile()" label="Edit Profile" />
             </div>
         </div>
         <hr>
@@ -20,7 +20,7 @@
                         First Name
                     </div>
                     <div class="value">
-                        Margot
+                        {{user.names}}
                     </div>
                 </div>
                 <div class="col">
@@ -28,11 +28,65 @@
                         Last Name
                     </div>
                     <div class="value">
-                        Robbie
+                        {{user.lastnames}}
                     </div>
                 </div>
             </div>
             <hr>
+            <div class="row">
+                <div class="col">
+                    <div class="head">
+                        Bio
+                    </div>
+                    <div class="value">{{user.bio}}</div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col">
+                    <div class="head">
+                        Email
+                    </div>
+                    <div class="value">
+                        {{user.email}}
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="head">
+                        Username
+                    </div>
+                    <div class="value">
+                        {{user.username}}
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col">
+                    <div class="head">
+                        Phone Number
+                    </div>
+                    <div class="value">
+                        {{user.phone_number }}
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="head">
+                        Province
+                    </div>
+                    <div class="value">
+                        {{user.province}}
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="linkbar rounded d-flex justify-content-between align-items-center w-100">
+                <div class="d-flex align-items-center">
+                    <i class="bi bi-record-fill"></i><span class="ps-2">Frequently Asked Questions
+                    </span>
+                </div>
+                <div><i class="bi bi-arrow-right"></i></div>
+            </div>
         </div>
     </section>
     <app-footer />

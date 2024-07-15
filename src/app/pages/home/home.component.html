@@ -6,7 +6,7 @@
                 <i class="bi bi-box2-heart-fill"></i>
                 <h3>Earn extra <span>money</span> while helping the <span>environment</span></h3>
                 <div class="btn-cta">
-                    <app-button label="Sell Now" />
+                    <app-button label="Sell Now" (onClick)="goToSell()" />
                 </div>
             </div>
         </div>
@@ -17,7 +17,7 @@
                     <div class="rounded p-3">
                         Save the <span>environment</span> with <span>dekche</span>
                         <div class="w-50 mt-2">
-                            <app-button label="Go to Shop"></app-button>
+                            <app-button label="Go to Shop" (onClick)="goToShop()"></app-button>
                         </div>
                     </div>
                 </div>

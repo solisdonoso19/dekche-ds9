@@ -22,6 +22,7 @@
       }
     }
     .info {
+      margin-bottom: 48px;
       .head {
         color: #a1824a;
       }
@@ -30,6 +31,16 @@
         font-weight: 400;
         font-size: 14px;
         line-height: 22px;
+      }
+      .linkbar {
+        margin-top: 48px;
+        cursor: pointer;
+        background-color: #a1824a;
+        color: #f5f0e5;
+        padding: 24px;
+        .bi-arrow-right {
+          font-size: 30px;
+        }
       }
     }
   }

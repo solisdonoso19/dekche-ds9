@@ -33,7 +33,7 @@
                             placeholder="Enter your province"></app-input>
                     </div>
                     <div>
-                        <app-input [form]="profile" name="phoneNumber" label="Phone Number"
+                        <app-input [form]="profile" name="phone_number" label="Phone Number"
                             placeholder="Enter your phone number (0000-0000)"></app-input>
                     </div>
                 </div>
@@ -47,7 +47,7 @@
                         <app-input [form]="profile" name="image" label="Profile Image"
                             placeholder="Enter your profile image" type="file"></app-input>
                     </div>
-                    <div class="d-flex gap-4 justify-content-between align-items-center">
+                    <!-- <div class="d-flex gap-4 justify-content-between align-items-center">
                         <div class="w-75">
                             <app-input [form]="profile" name="password"
                                 [label]="editPass ? 'Change Password' : 'Old Password'"
@@ -63,6 +63,9 @@
                         placeholder="Enter your new password name"></app-input>
                     <app-input [form]="profile" name="rePassword" label="Enter the new password again"
                         placeholder="Enter your new password name"></app-input>
+                    } -->
+                    @if (badRequest) {
+                    <app-alert text="An error has occurred, please review the fields and try again" />
                     }
                 </div>
                 <div style="margin-top: 32px;">

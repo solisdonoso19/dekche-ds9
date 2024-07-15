@@ -36,19 +36,33 @@ nav {
         }
       }
     }
-    .profile {
-      .dropdown {
-        button {
-          border: none;
-          width: max-content;
-          background-color: transparent;
+    .cart {
+      .dropdown-menu {
+        li {
+          gap: 10px;
+          p {
+            font-size: 14px;
+            line-height: 15px;
+          }
           img {
-            height: 40px;
-            width: 40px;
+            width: 50px;
+            height: 50px;
             object-fit: cover;
-            cursor: pointer;
           }
         }
+      }
+    }
+  }
+  .dropdown {
+    button {
+      border: none;
+      width: max-content;
+      background-color: transparent;
+      img {
+        height: 40px;
+        width: 40px;
+        object-fit: cover;
+        cursor: pointer;
       }
     }
   }

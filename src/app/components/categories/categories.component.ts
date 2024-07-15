@@ -1,4 +1,5 @@
 import { Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-categories',
@@ -14,8 +15,18 @@ export class CategoriesComponent {
   @ViewChild('scrollContainer') scrollContainer!: ElementRef;
   public scroll = 0;
 
+  constructor(private router: Router) {}
+
   ngOnInit() {
     console.log(this.category);
+  }
+
+  goToCategory() {
+    this.router.navigate([`shop/${this.category.id}`]);
+  }
+
+  goToType(id: string) {
+    this.router.navigate([`shop/${this.category.id}/${id}`]);
   }
 
   scrollRight() {

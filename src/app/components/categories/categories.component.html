@@ -1,11 +1,9 @@
 <section class="categories position-relative">
-    <h3>{{categoryTitle}}</h3>
+    <h3 (click)="goToCategory()" style="cursor: pointer;">{{categoryTitle}}</h3>
     <div #scrollContainer class="d-flex gap-4 w-100 overflow-auto scroll">
         @for (type of category.types; track $index) {
-        <div class="category">
-            <img class="rounded"
-                src="https://images.unsplash.com/photo-1541043081679-e877f6b15b51?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="...">
+        <div (click)="goToType(type.id)" class="category">
+            <img class="rounded" [src]="type.image" alt="...">
             <div class="gradient rounded-bottom">
                 {{type.type}}
             </div>

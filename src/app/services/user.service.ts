@@ -3,18 +3,20 @@ import { ConfigService } from './customRequest.service';
 import { Injectable } from '@angular/core';
 
 @Injectable({ providedIn: 'root' })
-export class AuthService {
-  constructor(private service: ConfigService) {}
-  login(credentials: any) {
+export class UserService {
+  public userId: number = 0;
+
+  constructor(private service: ConfigService) {
+    if (sessionStorage.getItem('user')) {
+      const user: any = JSON.parse(sessionStorage.getItem('user') || '');
+      this.userId = user.id;
+    }
+  }
+  getProfile() {
     return new Promise((resolve, reject) => {
-      this.service.post('auth/login', credentials).subscribe(
+      this.service.get(`users/${this.userId}`).subscribe(
         (res) => {
-          if (res.auth) {
-            sessionStorage.setItem('token', res.token);
-            sessionStorage.setItem('auth', res.auth);
-            sessionStorage.setItem('user', JSON.stringify(res.user));
-            resolve(true);
-          }
+          resolve(res);
         },
         (err) => {
           reject(new Error(err.ok));
@@ -23,9 +25,9 @@ export class AuthService {
     });
   }
 
-  register(body: any) {
+  putProfile(values: any) {
     return new Promise((resolve, reject) => {
-      this.service.post('auth/register', body).subscribe(
+      this.service.put(`users/${this.userId}`, values).subscribe(
         (res) => {
           if (res.success) {
             resolve(true);

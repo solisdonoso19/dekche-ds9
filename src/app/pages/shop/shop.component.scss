@@ -1,0 +1,92 @@
+.shop {
+  .container {
+    padding: 32px 0;
+    gap: 24px;
+    .banner {
+      margin-bottom: 18px;
+      color: #1c170d;
+      height: 480px;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-image: url(https://images.unsplash.com/photo-1556905055-8f358a7a47b2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+      .cta {
+        background-color: #fff;
+        width: 400px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        i {
+          font-size: 30px;
+        }
+        h3 {
+          text-align: start;
+          span {
+            font-family: "Playwrite ES Deco", cursive;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            text-decoration: underline;
+          }
+        }
+        .btn-cta {
+          width: 162px;
+        }
+      }
+    }
+    .articles {
+      margin: 0;
+      .no-data {
+        color: #a1824a;
+        background-color: #f5f0e5;
+        height: 400px;
+        font-size: 35px;
+        font-family: "Playwrite ES Deco", cursive;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        i {
+          font-size: 60px;
+        }
+      }
+      .article {
+        cursor: pointer;
+        transition: all 0.2s ease-in;
+        .img {
+          img {
+            height: 300px;
+            object-fit: cover;
+          }
+        }
+        .info {
+          margin-top: 16px;
+          h2 {
+            font-size: 22px;
+            color: #a1824a;
+          }
+          .description {
+            white-space: nowrap;
+            max-width: 100%;
+            overflow: hidden;
+            font-size: 16px;
+            line-height: 22px;
+            font-weight: 400;
+            text-overflow: ellipsis;
+          }
+          .information {
+            padding: 16px 0;
+            .price {
+              color: #a1824a;
+              font-size: 22px;
+              text-align: right;
+            }
+          }
+        }
+        &:hover {
+          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        }
+      }
+    }
+  }
+}

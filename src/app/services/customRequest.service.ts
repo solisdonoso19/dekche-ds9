@@ -8,12 +8,18 @@ export class ConfigService {
   constructor(private http: HttpClient) {}
   private host: string = environment.apiHost;
 
-  request(method: 'GET' | 'POST', url: string, data?: any): Observable<any> {
+  request(
+    method: 'GET' | 'POST' | 'PUT',
+    url: string,
+    data?: any
+  ): Observable<any> {
     if (method === 'GET') {
       const params = new HttpParams({ fromObject: data });
       return this.http.get(`${this.host}${url}`, { params });
     } else if (method === 'POST') {
       return this.http.post(`${this.host}${url}`, data);
+    } else if (method === 'PUT') {
+      return this.http.put(`${this.host}${url}`, data);
     } else {
       throw new Error(`Unsupported request method: ${method}`);
     }
@@ -25,5 +31,9 @@ export class ConfigService {
 
   post(url: string, data?: any): Observable<any> {
     return this.request('POST', url, data);
+  }
+
+  put(url: string, data?: any): Observable<any> {
+    return this.request('PUT', url, data);
   }
 }

@@ -4,15 +4,43 @@
         <span class="ps-1">dekche</span>
     </div>
     <div class="menu d-flex align-items-center">
-        <div class="search">
+        <!-- <div class="search">
             <form>
                 <app-input [form]="search" placeholder="Search" height="height: 40px" name="search"></app-input>
             </form>
-        </div>
+        </div> -->
         <div class="icons d-flex">
-            <div class="icon rounded">Sell</div>
+            <div (click)="goToSell()" class="icon rounded">Sell</div>
+            <div (click)="getCart()" class="dropdown cart">
+                <div type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <div class="icon rounded"><i class="bi bi-basket"></i></div>
+                </div>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    @for (c of cart; track $index) {
+                    <li class="dropdown-item d-flex align-items-center ">
+                        <img class="rounded" [src]="c.image" alt="">
+                        <div>
+                            <p>
+                                {{c.title}}
+                            </p>
+                            <p>X {{c.quantity}}</p>
+                        </div>
+                        <div class="w-100" style="text-align: right;font-size:18px;color:#a1824a">
+                            ${{c.price}}
+                        </div>
+                    </li>
+                    <hr class="dropdown-divider">
+                    }
+                    <li class="d-flex justify-content-between p-3" style="color: #a1824a; font-size:20px">
+                        <div>Total</div>
+                        <div>${{total.toFixed(2)}}</div>
+                    </li>
+                    <div style="padding: 0 10px;">
+                        <app-button label="Go to Checkout"></app-button>
+                    </div>
+                </ul>
+            </div>
             <div class="icon rounded"><i class="bi bi-balloon-heart"></i></div>
-            <div class="icon rounded"><i class="bi bi-basket"></i></div>
         </div>
         <div class="profile">
             <div class="dropdown">
